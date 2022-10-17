@@ -1,0 +1,998 @@
+{
+    "packages": [
+        {
+            "name": "neutrinos-all-default-nodes-plugin",
+            "default": true,
+            "visible": false,
+            "dependencies": [
+                {
+                    "name": "ndefault-all-nodes",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            "ChildProcess",
+                            "CORS",
+                            "DBConfig",
+                            "GlobalMiddlewareEnd",
+                            "GlobalMiddlewareStart",
+                            "GlobalNext",
+                            "HttpIn",
+                            "HttpOut",
+                            "HttpProxyConfig",
+                            "ServerHttpRequest",
+                            "MiddlewareEnd",
+                            "MiddlewareStart",
+                            "Next",
+                            "RouteMiddlewareEnd",
+                            "RouteMiddlewareStart",
+                            "ServerLog",
+                            "TLSConfig",
+                            "Processor"
+                        ],
+                        "common": [
+                            "Catch",
+                            "Comments",
+                            "Script",
+                            "Unknown"
+                        ],
+                        "pages": [
+                            "PageCallService",
+                            "PageStart",
+                            "PageSwitch",
+                            "ViewPicker",
+                            "PageVariables",
+                            "PageServiceVariables",
+                            "PageAsync"
+                        ],
+                        "client-server": [
+                            "ServiceVariables",
+                            "CallService",
+                            "Start",
+                            "Switch",
+                            "Async"
+                        ],
+                        "client-pages": [
+                            "Environment",
+                            "HttpRequest",
+                            "Log",
+                            "Navigation",
+                            "SnackBar",
+                            "Storage",
+                            "CallSSDApi",
+                            "UseDependency",
+                            "neutrinos-ngzone"
+                        ],
+                        "client": [
+                            "CanActivate",
+                            "CanDeactivate",
+                            "Resolve"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-active-directory-plugin",
+            "description": "All dependencies to do active directory operations.",
+            "displayName": "Active Directory",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-active-directory",
+                    "packageType": "studio-nodes",
+                    "displayName": "Active Directory Node",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "ActiveDirectory",
+                                "dependencies": [
+                                    {
+                                        "name": "activedirectory",
+                                        "version": "0.7.2"
+                                    },
+                                    {
+                                        "name": "http-status-codes",
+                                        "version": "2.1.4"
+                                    }
+                                ]
+                            },
+                            "ADConfig"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-data-model",
+            "description": "DataModel Plugin",
+            "displayName": "DataModel Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-datamodel",
+                    "packageType": "studio-nodes",
+                    "displayName": "Data Model",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "insert"
+                            },
+                            {
+                                "name": "update"
+                            },
+                            {
+                                "name": "remove"
+                            },
+                            {
+                                "name": "find"
+                            },
+                            {
+                                "name": "validate"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-amqp-plugin",
+            "description": "AMQP Plugin",
+            "displayName": "AMQP Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-amqp-producer",
+                    "packageType": "studio-nodes",
+                    "displayName": "AMPQ Producer",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "AMQPProducer",
+                                "dependencies": [
+                                    {
+                                        "name": "amqplib",
+                                        "version": "0.6.0"
+                                    }
+                                ],
+                                "devDependencies": [
+                                    {
+                                        "name": "@types/amqplib",
+                                        "version": "0.5.17"
+                                    }
+                                ]
+                            },
+                            "AMQPConfig"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-csv-plugin",
+            "description": "CSV Plugin",
+            "displayName": "CSV Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-csv",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "CSV",
+                                "dependencies": [
+                                    {
+                                        "name": "csv-parse",
+                                        "version": "4.16.3"
+                                    },
+                                    {
+                                        "name": "csv-stringify",
+                                        "version": "5.6.5"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-file-plugin",
+            "description": "File Plugin",
+            "displayName": "File Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-file",
+                    "packageType": "studio-nodes",
+                    "displayName": "File In/Out",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "FileIn",
+                                "dependencies": [
+                                    {
+                                        "name": "iconv-lite",
+                                        "version": "0.6.3"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "FileOut"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-json-plugin",
+            "description": "JSON Parser",
+            "displayName": "JSON Parser",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-json",
+                    "packageType": "studio-nodes",
+                    "displayName": "JSON",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "JSONConverter"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-mongodb-plugin",
+            "description": "MongoDB",
+            "displayName": "MongoDB",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-mongodb",
+                    "packageType": "studio-nodes",
+                    "displayName": "MongoDB",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "Mongodb",
+                                "dependencies": [
+                                    {
+                                        "name": "mongodb",
+                                        "version": "3.6.12"
+                                    },
+                                    {
+                                        "name": "bson",
+                                        "version": "4.5.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-session-plugin",
+            "description": "Session Management Plugin",
+            "displayName": "Session Management Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-session",
+                    "packageType": "studio-nodes",
+                    "displayName": "Session",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "Session"
+                            },
+                            {
+                                "name": "GlobalSession"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-mongo-session-plugin",
+            "description": "Mongo Session Plugin",
+            "displayName": "Mongo Session Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-mongo-session",
+                    "packageType": "studio-nodes",
+                    "displayName": "Mongo Session",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "GlobalMongoSession",
+                                "dependencies": [
+                                    {
+                                        "name": "mongodb",
+                                        "version": "3.6.12"
+                                    },
+                                    {
+                                        "name": "bson",
+                                        "version": "4.5.1"
+                                    },
+                                    {
+                                        "name": "neutrinos-mongodb-session-store",
+                                        "version": "0.0.1"
+                                    },
+                                    {
+                                        "name": "@types/express-session",
+                                        "version": "1.17.4"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-sql-plugin",
+            "description": "SQL Plugin",
+            "displayName": "SQL Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-sql",
+                    "packageType": "studio-nodes",
+                    "displayName": "SQL",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "ExecuteSql",
+                                "dependencies": [
+                                    {
+                                        "name": "typeorm",
+                                        "version": "0.2.37"
+                                    },
+                                    {
+                                        "name": "typeorm-static",
+                                        "version": "1.1.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-xml-plugin",
+            "description": "XML Plugin",
+            "displayName": "XML Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-xml",
+                    "packageType": "studio-nodes",
+                    "displayName": "XML",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "XML",
+                                "dependencies": [
+                                    {
+                                        "name": "xml2js",
+                                        "version": "0.4.23"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-yml-plugin",
+            "description": "YML Plugin",
+            "displayName": "YML Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-yml",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "YML",
+                                "dependencies": [
+                                    {
+                                        "name": "js-yaml",
+                                        "version": "4.1.0"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-email-plugin",
+            "description": "Email Plugin",
+            "displayName": "Email Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-email",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "EmailOut",
+                                "dependencies": [
+                                    {
+                                        "name": "poplib",
+                                        "version": "0.1.7"
+                                    },
+                                    {
+                                        "name": "nodemailer",
+                                        "version": "6.6.3"
+                                    },
+                                    {
+                                        "name": "mailparser",
+                                        "version": "3.3.0"
+                                    },
+                                    {
+                                        "name": "imap",
+                                        "version": "0.8.19"
+                                    }
+                                ]
+                            },
+                            "EmailOutConfig"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-callsoap-plugin",
+            "description": "Call Soap Plugin",
+            "displayName": "Call Soap Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-call-soap",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "Soap",
+                                "dependencies": [
+                                    {
+                                        "name": "strong-soap",
+                                        "version": "3.2.1"
+                                    }
+                                ]
+                            },
+                            "SoapConfig",
+                            "BasicAuthConfig"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-pub-sub",
+            "description": "Pub Sub for server",
+            "displayName": "Pub Sub for server",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-pub-sub",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "listen",
+                                "dependencies": []
+                            },
+                            {
+                                "name": "emit",
+                                "dependencies": []
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "_id": "607698d3cd274f75ac86f891",
+            "name": "neutrinos-uuid",
+            "averageRating": 0,
+            "description": "Uuid plugin generates the unique ID's",
+            "devid": "9ebab8f0-ec57-636a-624f-2b48a197cedc",
+            "displayName": "Uuid",
+            "lastUpdated": "2021-08-21T13:53:29.528Z",
+            "numberOfDownloads": 0,
+            "packageType": [
+                "studio-nodes"
+            ],
+            "platformSupportVersion": "7.4.0",
+            "pluginImage": "neutrinos-uuid-1615789467886.png",
+            "publisher": "Neutrinos",
+            "uploadedDate": "2021-04-14T07:25:07.584Z",
+            "username": "sajan.grover@neutrinos.co",
+            "version": "1.0.5",
+            "versions": {
+                "1.0.0": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-uuid",
+                            "displayName": "Uuid",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.0",
+                            "packageDependencies": {
+                                "uuid": "8.3.2"
+                            },
+                            "nodes": {
+                                "common": [
+                                    {
+                                        "name": "2324f0b2-56b6-677a-2cfd-04b88a58919a",
+                                        "displayName": "Uuid",
+                                        "dependencies": [
+                                            {
+                                                "name": "uuid",
+                                                "version": "8.3.2"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "7.4.0"
+                    },
+                    "metadata": {
+                        "devid": "9ebab8f0-ec57-636a-624f-2b48a197cedc",
+                        "name": "neutrinos-uuid",
+                        "displayName": "Uuid",
+                        "version": "1.0.0",
+                        "username": "sajan.grover@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "7.4.0"
+                        },
+                        "description": "Uuid plugin generates the unique ID's",
+                        "pluginImage": "neutrinos-uuid-1615789467886.png"
+                    },
+                    "version": "1.0.0"
+                },
+                "1.0.5": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-uuid",
+                            "displayName": "Uuid",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.5",
+                            "packageDependencies": {
+                                "uuid": "8.3.2"
+                            },
+                            "nodes": {
+                                "common": [
+                                    {
+                                        "name": "2324f0b2-56b6-677a-2cfd-04b88a58919a",
+                                        "displayName": "Uuid",
+                                        "dependencies": [
+                                            {
+                                                "name": "uuid",
+                                                "version": "8.3.2"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "7.4.0"
+                    },
+                    "metadata": {
+                        "devid": "9ebab8f0-ec57-636a-624f-2b48a197cedc",
+                        "name": "neutrinos-uuid",
+                        "displayName": "Uuid",
+                        "version": "1.0.5",
+                        "username": "sajan.grover@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "7.4.0"
+                        },
+                        "description": "Uuid plugin generates the unique ID's",
+                        "pluginImage": "neutrinos-uuid-1615789467886.png"
+                    },
+                    "version": "1.0.5"
+                }
+            },
+            "archiveFile": "api/zips/undefined",
+            "guide": "6121055a8a1f27001c94f03b",
+            "icon": "api/resource/icons/612105598a1f27001c94f033",
+            "screenshots": [
+                "api/resource/screenshots/612105598a1f27001c94f035",
+                "api/resource/screenshots/6121055a8a1f27001c94f037",
+                "api/resource/screenshots/6121055a8a1f27001c94f039"
+            ],
+            "no_of_downloads_by_packages": {
+                "neutrinos-uuid": 37
+            },
+            "dependencies": [
+                {
+                    "name": "neutrinos-uuid",
+                    "displayName": "Uuid",
+                    "packageType": "studio-nodes",
+                    "version": "1.0.5",
+                    "packageDependencies": {
+                        "uuid": "8.3.2"
+                    },
+                    "nodes": {
+                        "common": [
+                            {
+                                "name": "2324f0b2-56b6-677a-2cfd-04b88a58919a",
+                                "displayName": "Uuid",
+                                "dependencies": [
+                                    {
+                                        "name": "uuid",
+                                        "version": "8.3.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "_id": "60894d411f635aad386a2a62",
+            "name": "neutrinos-date",
+            "averageRating": 0,
+            "description": "Date",
+            "displayName": "Date",
+            "lastUpdated": "2021-09-17T04:48:37.714Z",
+            "numberOfDownloads": 0,
+            "packageType": [
+                "studio-nodes"
+            ],
+            "platformSupportVersion": "8.0.0",
+            "pluginImage": "neutrinos-date-1615877653124.png",
+            "publisher": "Neutrinos",
+            "uploadedDate": "2021-04-28T11:55:45.862Z",
+            "username": "david.kirubakaran@neutrinos.co",
+            "version": "1.1.2",
+            "versions": {
+                "1.0.0": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-date",
+                            "displayName": "Date",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.0",
+                            "packageDependencies": {
+                                "moment": "2.29.1"
+                            },
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "6bf7e803-907f-9550-90ed-3620ebd2b04e",
+                                        "displayName": "Parse"
+                                    },
+                                    {
+                                        "name": "8c62e28d-dcfa-d041-9532-0d7c90b81d88",
+                                        "displayName": "Date Operation"
+                                    },
+                                    {
+                                        "name": "354466cf-80ff-82f9-5a2a-d61303612450",
+                                        "displayName": "Format"
+                                    },
+                                    {
+                                        "name": "e174bcb4-d86e-2dad-4be9-ac8918c735fe",
+                                        "displayName": "Validate"
+                                    },
+                                    {
+                                        "name": "f8a26b09-bd59-5066-2a02-cf0495d4c863",
+                                        "displayName": "Duration"
+                                    },
+                                    {
+                                        "name": "6e63a417-8243-03ae-c961-cf742a152d1c",
+                                        "displayName": "Get Set"
+                                    }
+                                ],
+                                "client": [
+                                    {
+                                        "name": "e2c0d5f9-1b7d-826b-09f0-f380f5a12e60",
+                                        "displayName": "Parse"
+                                    },
+                                    {
+                                        "name": "c2775aec-83b9-c543-c18e-13021530a466",
+                                        "displayName": "Date Operation"
+                                    },
+                                    {
+                                        "name": "52f854e1-5a1a-6f28-d376-48e02b7d7425",
+                                        "displayName": "Format"
+                                    },
+                                    {
+                                        "name": "65791e5f-a204-6c8b-b3d9-b0bbca157a34",
+                                        "displayName": "Validate"
+                                    },
+                                    {
+                                        "name": "0aec2d74-11e1-bee2-6c5f-9ab88ebf5288",
+                                        "displayName": "Duration"
+                                    },
+                                    {
+                                        "name": "8c42578f-84c4-77b1-7904-8bb8114c90e9",
+                                        "displayName": "Get Set"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "7.4.0"
+                    },
+                    "metadata": {
+                        "name": "neutrinos-date",
+                        "displayName": "Date",
+                        "version": "1.0.0",
+                        "username": "david.kirubakaran@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "7.4.0"
+                        },
+                        "description": "Date",
+                        "pluginImage": "neutrinos-date-1615877653124.png"
+                    },
+                    "version": "1.0.0"
+                },
+                "1.1.0": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-date",
+                            "displayName": "Date",
+                            "packageType": "studio-nodes",
+                            "version": "1.1.0",
+                            "packageDependencies": {
+                                "moment": "2.29.1"
+                            },
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "6bf7e803-907f-9550-90ed-3620ebd2b04e",
+                                        "displayName": "Parse"
+                                    },
+                                    {
+                                        "name": "8c62e28d-dcfa-d041-9532-0d7c90b81d88",
+                                        "displayName": "Date Operation"
+                                    },
+                                    {
+                                        "name": "354466cf-80ff-82f9-5a2a-d61303612450",
+                                        "displayName": "Format"
+                                    },
+                                    {
+                                        "name": "e174bcb4-d86e-2dad-4be9-ac8918c735fe",
+                                        "displayName": "Validate"
+                                    },
+                                    {
+                                        "name": "f8a26b09-bd59-5066-2a02-cf0495d4c863",
+                                        "displayName": "Duration"
+                                    },
+                                    {
+                                        "name": "6e63a417-8243-03ae-c961-cf742a152d1c",
+                                        "displayName": "Get Set"
+                                    }
+                                ],
+                                "client": [
+                                    {
+                                        "name": "e2c0d5f9-1b7d-826b-09f0-f380f5a12e60",
+                                        "displayName": "Parse"
+                                    },
+                                    {
+                                        "name": "c2775aec-83b9-c543-c18e-13021530a466",
+                                        "displayName": "Date Operation"
+                                    },
+                                    {
+                                        "name": "52f854e1-5a1a-6f28-d376-48e02b7d7425",
+                                        "displayName": "Format"
+                                    },
+                                    {
+                                        "name": "65791e5f-a204-6c8b-b3d9-b0bbca157a34",
+                                        "displayName": "Validate"
+                                    },
+                                    {
+                                        "name": "0aec2d74-11e1-bee2-6c5f-9ab88ebf5288",
+                                        "displayName": "Duration"
+                                    },
+                                    {
+                                        "name": "8c42578f-84c4-77b1-7904-8bb8114c90e9",
+                                        "displayName": "Get Set"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "7.4.0"
+                    },
+                    "metadata": {
+                        "name": "neutrinos-date",
+                        "displayName": "Date",
+                        "version": "1.1.0",
+                        "username": "david.kirubakaran@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "7.4.0"
+                        },
+                        "description": "Date",
+                        "pluginImage": "neutrinos-date-1615877653124.png"
+                    },
+                    "version": "1.1.0"
+                },
+                "1.1.2": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-date",
+                            "displayName": "Date",
+                            "packageType": "studio-nodes",
+                            "version": "1.1.2",
+                            "packageDependencies": {
+                                "moment": "2.29.1"
+                            },
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "6bf7e803-907f-9550-90ed-3620ebd2b04e",
+                                        "displayName": "Parse"
+                                    },
+                                    {
+                                        "name": "8c62e28d-dcfa-d041-9532-0d7c90b81d88",
+                                        "displayName": "Date Operation"
+                                    },
+                                    {
+                                        "name": "354466cf-80ff-82f9-5a2a-d61303612450",
+                                        "displayName": "Format"
+                                    },
+                                    {
+                                        "name": "e174bcb4-d86e-2dad-4be9-ac8918c735fe",
+                                        "displayName": "Validate"
+                                    },
+                                    {
+                                        "name": "f8a26b09-bd59-5066-2a02-cf0495d4c863",
+                                        "displayName": "Duration"
+                                    },
+                                    {
+                                        "name": "6e63a417-8243-03ae-c961-cf742a152d1c",
+                                        "displayName": "Get Set"
+                                    }
+                                ],
+                                "client-pages": [
+                                    {
+                                        "name": "e2c0d5f9-1b7d-826b-09f0-f380f5a12e60",
+                                        "displayName": "Parse"
+                                    },
+                                    {
+                                        "name": "c2775aec-83b9-c543-c18e-13021530a466",
+                                        "displayName": "Date Operation"
+                                    },
+                                    {
+                                        "name": "52f854e1-5a1a-6f28-d376-48e02b7d7425",
+                                        "displayName": "Format"
+                                    },
+                                    {
+                                        "name": "65791e5f-a204-6c8b-b3d9-b0bbca157a34",
+                                        "displayName": "Validate"
+                                    },
+                                    {
+                                        "name": "0aec2d74-11e1-bee2-6c5f-9ab88ebf5288",
+                                        "displayName": "Duration"
+                                    },
+                                    {
+                                        "name": "8c42578f-84c4-77b1-7904-8bb8114c90e9",
+                                        "displayName": "Get Set"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "8.0.0"
+                    },
+                    "metadata": {
+                        "name": "neutrinos-date",
+                        "displayName": "Date",
+                        "version": "1.1.2",
+                        "username": "david.kirubakaran@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "8.0.0"
+                        },
+                        "description": "Date",
+                        "pluginImage": "neutrinos-date-1615877653124.png"
+                    },
+                    "version": "1.1.2"
+                }
+            },
+            "archiveFile": "api/zips/undefined",
+            "guide": "61441e26ce7dc1001c0b69eb",
+            "icon": "api/resource/icons/61441e25ce7dc1001c0b69e7",
+            "screenshots": [
+                "api/resource/screenshots/61441e26ce7dc1001c0b69e9"
+            ],
+            "no_of_downloads_by_packages": {
+                "neutrinos-date": 11
+            },
+            "dependencies": [
+                {
+                    "name": "neutrinos-date",
+                    "displayName": "Date",
+                    "packageType": "studio-nodes",
+                    "version": "1.1.2",
+                    "packageDependencies": {
+                        "moment": "2.29.1"
+                    },
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "6bf7e803-907f-9550-90ed-3620ebd2b04e",
+                                "displayName": "Parse"
+                            },
+                            {
+                                "name": "8c62e28d-dcfa-d041-9532-0d7c90b81d88",
+                                "displayName": "Date Operation"
+                            },
+                            {
+                                "name": "354466cf-80ff-82f9-5a2a-d61303612450",
+                                "displayName": "Format"
+                            },
+                            {
+                                "name": "e174bcb4-d86e-2dad-4be9-ac8918c735fe",
+                                "displayName": "Validate"
+                            },
+                            {
+                                "name": "f8a26b09-bd59-5066-2a02-cf0495d4c863",
+                                "displayName": "Duration"
+                            },
+                            {
+                                "name": "6e63a417-8243-03ae-c961-cf742a152d1c",
+                                "displayName": "Get Set"
+                            }
+                        ],
+                        "client-pages": [
+                            {
+                                "name": "e2c0d5f9-1b7d-826b-09f0-f380f5a12e60",
+                                "displayName": "Parse"
+                            },
+                            {
+                                "name": "c2775aec-83b9-c543-c18e-13021530a466",
+                                "displayName": "Date Operation"
+                            },
+                            {
+                                "name": "52f854e1-5a1a-6f28-d376-48e02b7d7425",
+                                "displayName": "Format"
+                            },
+                            {
+                                "name": "65791e5f-a204-6c8b-b3d9-b0bbca157a34",
+                                "displayName": "Validate"
+                            },
+                            {
+                                "name": "0aec2d74-11e1-bee2-6c5f-9ab88ebf5288",
+                                "displayName": "Duration"
+                            },
+                            {
+                                "name": "8c42578f-84c4-77b1-7904-8bb8114c90e9",
+                                "displayName": "Get Set"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

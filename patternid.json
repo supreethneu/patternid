@@ -1,0 +1,13 @@
+{
+    "displayName": "PatternID",
+    "appName": "patternid",
+    "description": "Generate ID and Patttern",
+    "lastModified": "2022-10-13T07:43:59.731Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2022-10-13T07:43:59.562Z",
+    "analyticsId": "5ceb0c00-6bfd-98cb-6a86-175fb2c8f32a",
+    "createdStudioVersion": "8.3.1"
+}
