@@ -1,0 +1,643 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_YcjR49og4q4pSsJ9",
+        "type": "tab",
+        "createdDate": "2022-10-25T07:27:21.741Z",
+        "label": "Analytics",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "Analytics",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_pmlQjCLQZJ3RC8I6",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_YcjR49og4q4pSsJ9",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "analytics/total",
+        "uploadpath": "",
+        "summary": "API to display total count of IDs generated",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 85,
+        "y": 60,
+        "wires": [
+            [
+                "sd_wgigtSC2kL5yMjCk"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "Analytics",
+        "functionName": "sd_pmlQjCLQZJ3RC8I6"
+    },
+    {
+        "id": "sd_faxD0Uw4Y2qh6uEi",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_YcjR49og4q4pSsJ9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "DocCountResult",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.DocCountResult",
+            "send": "bh.local.DocCountResult"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_faxD0Uw4Y2qh6uEi",
+        "category": "HTTP",
+        "x": 525,
+        "y": 80,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Analytics",
+        "generated": true
+    },
+    {
+        "id": "sd_MQrRSsreSd4TMbLR",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_YcjR49og4q4pSsJ9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_U4PHMi8wnz0S98uN",
+        "collection": "\"IDs\"",
+        "options": "",
+        "resultMapping": "bh.local.DocCountResult",
+        "operation": "countDocuments",
+        "argumentArray": [
+            "query"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh.local.mongoquery",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_MQrRSsreSd4TMbLR",
+        "category": "Storage",
+        "x": 385,
+        "y": 80,
+        "wires": [
+            [
+                "sd_faxD0Uw4Y2qh6uEi"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "str",
+                "value": "IDs",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "DocCountResult",
+                "constant": false
+            },
+            "query": {
+                "type": "bh.local",
+                "value": "mongoquery",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Analytics",
+        "generated": true
+    },
+    {
+        "id": "sd_wgigtSC2kL5yMjCk",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_YcjR49og4q4pSsJ9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.mongoquery={}",
+        "functionName": "sd_wgigtSC2kL5yMjCk",
+        "category": "Function",
+        "x": 285,
+        "y": 60,
+        "wires": [
+            [
+                "sd_MQrRSsreSd4TMbLR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Analytics",
+        "generated": true
+    },
+    {
+        "id": "sd_9qZEIag4unuP0vrQ",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_YcjR49og4q4pSsJ9",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "analytics/day",
+        "uploadpath": "",
+        "summary": "API to display total count of IDs Generated for SPECIFIED DATE",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "date",
+                    "desc": "Specify the date in YYYY/MM/DD format",
+                    "type": "path",
+                    "required": true,
+                    "rowId": "sd_YCFutTkB8HGVKKoP",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 85,
+        "y": 200,
+        "wires": [
+            [
+                "sd_tyfpFp0dyHVBi6ls"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "Analytics",
+        "functionName": "sd_9qZEIag4unuP0vrQ"
+    },
+    {
+        "id": "sd_NZYStZUcY2dEBUXq",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_YcjR49og4q4pSsJ9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "DocCountResult",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.DocCountResult",
+            "send": "bh.local.DocCountResult"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_NZYStZUcY2dEBUXq",
+        "category": "HTTP",
+        "x": 525,
+        "y": 220,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Analytics",
+        "generated": true
+    },
+    {
+        "id": "sd_asEqqWLwhQxuNUfu",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_YcjR49og4q4pSsJ9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_U4PHMi8wnz0S98uN",
+        "collection": "\"IDs\"",
+        "options": "",
+        "resultMapping": "bh.local.DocCountResult",
+        "operation": "countDocuments",
+        "argumentArray": [
+            "query"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh.local.mongoquery",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_asEqqWLwhQxuNUfu",
+        "category": "Storage",
+        "x": 385,
+        "y": 220,
+        "wires": [
+            [
+                "sd_NZYStZUcY2dEBUXq"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "str",
+                "value": "IDs",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "DocCountResult",
+                "constant": false
+            },
+            "query": {
+                "type": "bh.local",
+                "value": "mongoquery",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Analytics",
+        "generated": true
+    },
+    {
+        "id": "sd_tyfpFp0dyHVBi6ls",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_YcjR49og4q4pSsJ9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// var nowDate = new Date();\n// bh.input.todate = nowDate.getFullYear() + '/' + (nowDate.getMonth() + 1) + '/' + nowDate.getDate();\n\nconsole.log(bh.input.body.date);\n\n\nvar start = new Date(bh.input.body.date);\nvar end = new Date(bh.input.body.date);\nend.setHours(23,59,59,999);\n\nbh.local.mongoquery = {\n    created: {\n        \"$gte\": start,\n        \"$lt\": end\n    }\n}\n\nconsole.log(bh.local.mongoquery);\n",
+        "functionName": "sd_tyfpFp0dyHVBi6ls",
+        "category": "Function",
+        "x": 285,
+        "y": 200,
+        "wires": [
+            [
+                "sd_asEqqWLwhQxuNUfu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Analytics",
+        "generated": true
+    },
+    {
+        "id": "sd_j3o0tB7Fkn0hpZL5",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_YcjR49og4q4pSsJ9",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "analytics/range",
+        "uploadpath": "",
+        "summary": "API to display total IDs Generated for a defined range of Date and Time.",
+        "description": "The API accepts Start date,time and End date,time . It returns the total IDs generated between the defined range of Date and Time. ",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "start",
+                    "desc": "Start (From) Date and Time . Value MUST be specified in ISO (use .toISOString() to convert)",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_F2f3fc2DApfi1qMO",
+                    "valid": true
+                },
+                {
+                    "key": "end",
+                    "desc": "End (To) Date and Time . Value MUST be specified in ISO (use .toISOString() to convert)",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_XHrNEIJwBGCbs2AA",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 105,
+        "y": 340,
+        "wires": [
+            [
+                "sd_4M2GcU1jVNgLzrtd"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "Analytics",
+        "functionName": "sd_j3o0tB7Fkn0hpZL5"
+    },
+    {
+        "id": "sd_jNxVyObAhEPeJprT",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_YcjR49og4q4pSsJ9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "DocCountResult",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.DocCountResult",
+            "send": "bh.local.DocCountResult"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_jNxVyObAhEPeJprT",
+        "category": "HTTP",
+        "x": 565,
+        "y": 340,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Analytics",
+        "generated": true
+    },
+    {
+        "id": "sd_EBrCyWl2rETsn42z",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_YcjR49og4q4pSsJ9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_U4PHMi8wnz0S98uN",
+        "collection": "\"IDs\"",
+        "options": "",
+        "resultMapping": "bh.local.DocCountResult",
+        "operation": "countDocuments",
+        "argumentArray": [
+            "query"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh.local.mongoquery",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_EBrCyWl2rETsn42z",
+        "category": "Storage",
+        "x": 405,
+        "y": 340,
+        "wires": [
+            [
+                "sd_jNxVyObAhEPeJprT"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "str",
+                "value": "IDs",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "DocCountResult",
+                "constant": false
+            },
+            "query": {
+                "type": "bh.local",
+                "value": "mongoquery",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Analytics",
+        "generated": true
+    },
+    {
+        "id": "sd_4M2GcU1jVNgLzrtd",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_YcjR49og4q4pSsJ9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const startISO = new Date(bh.input.body.start);\nconst endISO = new Date(bh.input.body.end);\nconsole.log(bh.input.body.start);\nconsole.log(bh.input.body.end);\nconsole.log(startISO);\nconsole.log(endISO);\n\n\nbh.local.mongoquery = {\n    created : {\"$gte\" : startISO,\n                \"$lte\" : endISO}\n                }",
+        "functionName": "sd_4M2GcU1jVNgLzrtd",
+        "category": "Function",
+        "x": 285,
+        "y": 340,
+        "wires": [
+            [
+                "sd_EBrCyWl2rETsn42z"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Analytics",
+        "generated": true
+    }
+]

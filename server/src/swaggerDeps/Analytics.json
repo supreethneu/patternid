@@ -1,0 +1,61 @@
+{
+    "/analytics/total": {
+        "get": {
+            "summary": "API to display total count of IDs generated",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "Analytics"
+            ]
+        }
+    },
+    "/analytics/day": {
+        "post": {
+            "summary": "API to display total count of IDs Generated for SPECIFIED DATE",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "date",
+                    "description": "Specify the date in YYYY/MM/DD format",
+                    "required": true
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "Analytics"
+            ]
+        }
+    },
+    "/analytics/range": {
+        "post": {
+            "summary": "API to display total IDs Generated for a defined range of Date and Time.",
+            "description": "The API accepts Start date,time and End date,time . It returns the total IDs generated between the defined range of Date and Time. ",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "start",
+                    "description": "Start (From) Date and Time . Value MUST be specified in ISO (use .toISOString() to convert)",
+                    "required": true
+                },
+                {
+                    "in": "body",
+                    "name": "end",
+                    "description": "End (To) Date and Time . Value MUST be specified in ISO (use .toISOString() to convert)",
+                    "required": true
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "Analytics"
+            ]
+        }
+    }
+}
